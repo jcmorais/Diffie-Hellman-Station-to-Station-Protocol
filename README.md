@@ -1,7 +1,8 @@
+
 # Diffie-Hellman-Station-to-Station-Protocol
 In public-key cryptography, the Station-to-Station (STS) protocol is a cryptographic key agreement scheme based on classic Diffie–Hellman that provides mutual key and entity authentication.  In addition to protecting the established key from an attacker, the STS protocol uses no timestamps and provides perfect forward secrecy. It also entails two-way explicit key confirmation, making it an authenticated key agreement with key confirmation (AKC) protocol.
 
-Supposing all setup data has been shared, the STS protocol proceeds as follows. If a step cannot be completed, the protocol immediately stops. All exponentials are in the group specified by p.
+Supposing all setup data has been shared, the STS protocol proceeds as follows. If a step cannot be completed, the protocol immediately stops.
 
 1. Server generates a random number x and computes and sends the exponential g^x to Client.
 2. Client generates a random number y and computes the exponential g^y.
@@ -18,7 +19,7 @@ The basic form of the protocol is formalized in the following three steps:
 
 (1) Server → Client : g^x
 
-(2) Server ← Client : g^y, EK(SB(g^y, g^x))
+(2) Server ← Client : g^y, Ek(SB(g^y, g^x))
 
 (3) Server → Client : Ek(SA(g^x, g^y))
 
