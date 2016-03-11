@@ -17,5 +17,7 @@ Bob decrypts and verifies Alice's signature using her asymmetric public key.
 The basic form of the protocol is formalized in the following three steps:
 
 (1) Alice → Bob : g^x
+
 (2) Alice ← Bob : g^y, EK(SB(g^y, g^x))
+
 (3) Alice → Bob : Ek(SA(g^x, g^y))
