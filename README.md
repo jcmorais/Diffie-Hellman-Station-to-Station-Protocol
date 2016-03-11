@@ -3,24 +3,24 @@ In public-key cryptography, the Station-to-Station (STS) protocol is a cryptogra
 
 Supposing all setup data has been shared, the STS protocol proceeds as follows. If a step cannot be completed, the protocol immediately stops. All exponentials are in the group specified by p.
 
-1. Alice generates a random number x and computes and sends the exponential g^x to Bob.
-2. Bob generates a random number y and computes the exponential g^y.
-3. Bob computes the shared secret key K = (g^x)^y.
-4. Bob concatenates the exponentials (gy, gx), signs them using his asymmetric (secret) key B, and then encrypts the signature with K. He sends the ciphertext along with his own exponential gy to Alice.
-5. Alice computes the shared secret key K = (g^y)^x.
-6. Alice decrypts and verifies Bob's signature using his asymmetric public key.
-7. Alice concatenates the exponentials (g^x, g^y) (order is important), signs them using her asymmetric (secret) key A, and then encrypts the signature with K. She sends the ciphertext to Bob.
-Bob decrypts and verifies Alice's signature using her asymmetric public key.
-8. Alice and Bob are now mutually authenticated and have a shared secret. This secret, K, can then be used to encrypt further communication. 
+1. Server generates a random number x and computes and sends the exponential g^x to Client.
+2. Client generates a random number y and computes the exponential g^y.
+3. Client computes the shared secret key K = (g^x)^y.
+4. Client concatenates the exponentials (gy, gx), signs them using his asymmetric (secret) key B, and then encrypts the signature with K. He sends the ciphertext along with his own exponential gy to Server.
+5. Server computes the shared secret key K = (g^y)^x.
+6. Server decrypts and verifies Client's signature using his asymmetric public key.
+7. Server concatenates the exponentials (g^x, g^y) (order is important), signs them using her asymmetric (secret) key A, and then encrypts the signature with K. She sends the ciphertext to Client.
+Client decrypts and verifies Server's signature using her asymmetric public key.
+8. Server and Client are now mutually authenticated and have a shared secret. This secret, K, can then be used to encrypt further communication. 
 
 
 The basic form of the protocol is formalized in the following three steps:
 
-(1) Alice → Bob : g^x
+(1) Server → Client : g^x
 
-(2) Alice ← Bob : g^y, EK(SB(g^y, g^x))
+(2) Server ← Client : g^y, EK(SB(g^y, g^x))
 
-(3) Alice → Bob : Ek(SA(g^x, g^y))
+(3) Server → Client : Ek(SA(g^x, g^y))
 
 
 https://en.wikipedia.org/wiki/Station-to-Station_protocol
