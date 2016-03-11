@@ -11,10 +11,11 @@ Supposing all setup data has been shared, the STS protocol proceeds as follows. 
 6. Alice decrypts and verifies Bob's signature using his asymmetric public key.
 7. Alice concatenates the exponentials (gx, gy) (order is important), signs them using her asymmetric (secret) key A, and then encrypts the signature with K. She sends the ciphertext to Bob.
 Bob decrypts and verifies Alice's signature using her asymmetric public key.
-8. Alice and Bob are now mutually authenticated and have a shared secret. This secret, K, can then be used to encrypt further communication. The basic form of the protocol is formalized in the following three steps:
+8. Alice and Bob are now mutually authenticated and have a shared secret. This secret, K, can then be used to encrypt further communication. 
+
+
+The basic form of the protocol is formalized in the following three steps:
 
 (1) Alice → Bob : g^x
-
 (2) Alice ← Bob : g^y, EK(SB(g^y, g^x))
-
 (3) Alice → Bob : Ek(SA(g^x, g^y))
