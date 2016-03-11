@@ -14,5 +14,7 @@ Bob decrypts and verifies Alice's signature using her asymmetric public key.
 8. Alice and Bob are now mutually authenticated and have a shared secret. This secret, K, can then be used to encrypt further communication. The basic form of the protocol is formalized in the following three steps:
 
 (1) Alice → Bob : g^x
+
 (2) Alice ← Bob : g^y, EK(SB(g^y, g^x))
+
 (3) Alice → Bob : Ek(SA(g^x, g^y))
