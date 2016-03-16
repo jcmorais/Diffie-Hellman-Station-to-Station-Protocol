@@ -23,7 +23,7 @@ Client → Server : g^(y)
 
 Server, Client : Key = g^(xy)
 
-Server ← Client : g^y, Ek(S(g^(y), g^(x)))
+Server ← Client : Ek(S(g^(y), g^(x)))
 
 Server → Client : Ek(S(g^(x), g^(y)))
 
