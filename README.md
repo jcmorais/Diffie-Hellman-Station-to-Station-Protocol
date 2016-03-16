@@ -19,7 +19,7 @@ The basic form of the protocol is formalized in the following three steps:
 
 Server → Client : p, g, g^(x)
 
-Client → Server : g^(y)
+Server ← Client : g^(y)
 
 Server, Client : Key = g^(xy)
 
