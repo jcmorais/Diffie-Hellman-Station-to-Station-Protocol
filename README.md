@@ -17,11 +17,15 @@ Client decrypts and verifies Server's signature using her asymmetric public key.
 
 The basic form of the protocol is formalized in the following three steps:
 
-(1) Server → Client : g^x
+Server → Client : p, g, g^(x)
 
-(2) Server ← Client : g^y, Ek(SB(g^y, g^x))
+Client → Server : g^(y)
 
-(3) Server → Client : Ek(SA(g^x, g^y))
+Server, Client : Key = g^(xy)
+
+Server ← Client : g^y, Ek(S(g^(y), g^(x)))
+
+Server → Client : Ek(S(g^(x), g^(y)))
 
 
 https://en.wikipedia.org/wiki/Station-to-Station_protocol
